@@ -1,0 +1,11 @@
+{
+  "name": "thambot",
+  "description": "Telegram Bot for USP OWeek",
+  "version": "0.0.1",
+  "author": "Yui Wei, Yeo Joey",
+  "dependencies": {
+    "jsonfile": "^2.2.1",
+    "telegram-bot-api": "^0.3.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,798 @@
+204-124:thambot yuiwei$ node app.js
+{ description: 'Error: Unauthorized', code: 401 }
+undefined
+204-124:thambot yuiwei$ node app.js
+null
+{ id: 111443989, first_name: 'ThamBot', username: 'ThamBot' }
+204-124:thambot yuiwei$ node app.js
+null
+{ id: 111443989, first_name: 'ThamBot', username: 'ThamBot' }
+204-124:thambot yuiwei$ 
+204-124:thambot yuiwei$ node app.js
+null
+{ id: 111443989, first_name: 'ThamBot', username: 'ThamBot' }
+204-124:thambot yuiwei$ node app.js
+204-124:thambot yuiwei$ node app.js
+{ message_id: 3,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436632804,
+  text: 'Jsjdf' }
+{ message_id: 4,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436632808,
+  text: 'Hey' }
+{ message_id: 5,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436632813,
+  text: 'Yay' }
+{ message_id: 6,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436632816,
+  text: 'Great' }
+^C
+204-124:thambot yuiwei$ node app.js
+{ id: 37019292, first_name: 'yw', username: 'yuiwei' }
+{ id: 37019292, first_name: 'yw', username: 'yuiwei' }
+Hi
+1436633913
+{ id: 37019292, first_name: 'yw', username: 'yuiwei' }
+{ id: 37019292, first_name: 'yw', username: 'yuiwei' }
+Great
+1436633923
+^C
+204-124:thambot yuiwei$ node app.js
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 12,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634332,
+  sticker: 
+   { width: 339,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQFABNp3a4yAASxyPhNduuLWmxOAAIC',
+        file_size: 2376,
+        width: 60,
+        height: 90 },
+     file_id: 'BQADBQADEAADyIsGAAHpcaIm0-t0ZwI',
+     file_size: 42442 } }
+{ message_id: 13,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634335,
+  sticker: 
+   { width: 512,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQCABNsdlkqAASNj04-oU2IU5E_AAIC',
+        file_size: 6302,
+        width: 128,
+        height: 128 },
+     file_id: 'BQADAgADfgcAAlOx9wMiOOFgaV7omAI',
+     file_size: 34882 } }
+{ message_id: 14,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634341,
+  sticker: 
+   { width: 339,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQFABNp3a4yAASxyPhNduuLWmxOAAIC',
+        file_size: 2376,
+        width: 60,
+        height: 90 },
+     file_id: 'BQADBQADEAADyIsGAAHpcaIm0-t0ZwI',
+     file_size: 42442 } }
+{ message_id: 15,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634364,
+  sticker: 
+   { width: 448,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQFABOQyrEyAAQIMgtH7_G8U-d_AAIC',
+        file_size: 2564,
+        width: 79,
+        height: 90 },
+     file_id: 'BQADBQADJQADyIsGAAGdzbYn4WkdaAI',
+     file_size: 46298 } }
+^C
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 16,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634746,
+  forward_from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  forward_date: 1436634502,
+  sticker: 
+   { width: 504,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQCABMPo1kqAAQJlackXgvmNoYyAAIC',
+        file_size: 6976,
+        width: 126,
+        height: 128 },
+     file_id: 'BQADAgADAgEAAvR7GQABm0hmTR_O2gIC',
+     file_size: 45216 } }
+{ message_id: 17,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634778,
+  forward_from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  forward_date: 1436634502,
+  sticker: 
+   { width: 504,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQCABMPo1kqAAQJlackXgvmNoYyAAIC',
+        file_size: 6976,
+        width: 126,
+        height: 128 },
+     file_id: 'BQADAgADAgEAAvR7GQABm0hmTR_O2gIC',
+     file_size: 45216 } }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 17,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634778,
+  forward_from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  forward_date: 1436634502,
+  sticker: 
+   { width: 504,
+     height: 512,
+     thumb: 
+      { file_id: 'AAQCABMPo1kqAAQJlackXgvmNoYyAAIC',
+        file_size: 6976,
+        width: 126,
+        height: 128 },
+     file_id: 'BQADAgADAgEAAvR7GQABm0hmTR_O2gIC',
+     file_size: 45216 } }
+{ message_id: 18,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634927,
+  text: '/yuyen' }
+{ message_id: 19,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436634931,
+  text: '/help' }
+^C
+204-124:thambot yuiwei$ node app.js
+/Users/yuiwei/Documents/thambot/app.js:39
+            sticker: response.content;
+                                     ^
+SyntaxError: Unexpected token ;
+    at exports.runInThisContext (vm.js:73:16)
+    at Module._compile (module.js:443:25)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+204-124:thambot yuiwei$ node app.js
+{ message_id: 20,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635697,
+  text: 'yuyen' }
+/Users/yuiwei/Documents/thambot/logic.js:20
+    if (message.text == 'yuyen') return { content: yuyen(), type: sticker };
+                                                                  ^
+ReferenceError: sticker is not defined
+    at Object.getResponse (/Users/yuiwei/Documents/thambot/logic.js:20:67)
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:14:26)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 20,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635697,
+  text: 'yuyen' }
+/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js:33
+  source.on('error', function() {});
+         ^
+TypeError: undefined is not a function
+    at Function.DelayedStream.create (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js:33:10)
+    at FormData.CombinedStream.append (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/lib/combined_stream.js:43:37)
+    at FormData.append (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/form-data/lib/form_data.js:43:3)
+    at appendFormValue (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:342:21)
+    at Request.init (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:353:11)
+    at new Request (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:139:8)
+    at request (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/index.js:55:10)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/index.js:99:12
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:482:13
+    at FSReqWrap.cb [as oncomplete] (fs.js:226:19)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 20,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635697,
+  text: 'yuyen' }
+{ message_id: 21,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635718,
+  text: 'yuyen' }
+/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js:33
+  source.on('error', function() {});
+         ^
+TypeError: undefined is not a function
+    at Function.DelayedStream.create (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/node_modules/delayed-stream/lib/delayed_stream.js:33:10)
+    at FormData.CombinedStream.append (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/combined-stream/lib/combined_stream.js:43:37)
+    at FormData.append (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/node_modules/form-data/lib/form_data.js:43:3)
+    at appendFormValue (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:342:21)
+    at Request.init (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:353:11)
+    at new Request (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:139:8)
+    at request (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/index.js:55:10)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/index.js:99:12
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:482:13
+    at FSReqWrap.cb [as oncomplete] (fs.js:226:19)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 20,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635697,
+  text: 'yuyen' }
+{ message_id: 21,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635718,
+  text: 'yuyen' }
+{ message_id: 24,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436635873,
+  text: 'yuyen' }
+{ message_id: 26,
+  from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  chat: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  date: 1436636051,
+  text: '/start' }
+{ message_id: 27,
+  from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  chat: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  date: 1436636055,
+  text: 'yuyen' }
+{ message_id: 29,
+  from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  chat: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  date: 1436636079,
+  text: '/start' }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 30,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436636375,
+  text: 'yuyen' }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 32,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436636739,
+  document: 
+   { file_name: 'frisbee.jpg',
+     mime_type: 'image/jpeg',
+     thumb: 
+      { file_id: 'AAQFABOqYLMyAAQwePbhvh2Dcw8PAAIC',
+        file_size: 3634,
+        width: 88,
+        height: 90 },
+     file_id: 'BQADBQADBgADnN40AmX1Kqc5U-6EAg',
+     file_size: 25759 } }
+/Users/yuiwei/Documents/thambot/app.js:17
+    if (response.type == 'text') {
+                ^
+TypeError: Cannot read property 'type' of undefined
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:17:17)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 32,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436636739,
+  document: 
+   { file_name: 'frisbee.jpg',
+     mime_type: 'image/jpeg',
+     thumb: 
+      { file_id: 'AAQFABOqYLMyAAQwePbhvh2Dcw8PAAIC',
+        file_size: 3634,
+        width: 88,
+        height: 90 },
+     file_id: 'BQADBQADBgADnN40AmX1Kqc5U-6EAg',
+     file_size: 25759 } }
+/Users/yuiwei/Documents/thambot/app.js:17
+    if (response.type == 'text') {
+                ^
+TypeError: Cannot read property 'type' of undefined
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:17:17)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 32,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436636739,
+  document: 
+   { file_name: 'frisbee.jpg',
+     mime_type: 'image/jpeg',
+     thumb: 
+      { file_id: 'AAQFABOqYLMyAAQwePbhvh2Dcw8PAAIC',
+        file_size: 3634,
+        width: 88,
+        height: 90 },
+     file_id: 'BQADBQADBgADnN40AmX1Kqc5U-6EAg',
+     file_size: 25759 } }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 33,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637070,
+  text: 'frisbee' }
+{ description: 'Error: Bad Request: Type of file to send mismatch',
+  code: 400 }
+/Users/yuiwei/Documents/thambot/app.js:35
+            console.log(util.inspect(data, false, null));
+                        ^
+ReferenceError: util is not defined
+    at /Users/yuiwei/Documents/thambot/app.js:35:25
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:301:28
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:87:20)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:299:17)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+    at Request.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:1050:14)
+    at Request.emit (events.js:129:20)
+    at IncomingMessage.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:996:12)
+    at IncomingMessage.emit (events.js:129:20)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 33,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637070,
+  text: 'frisbee' }
+{ message_id: 34,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637112,
+  photo: 
+   [ { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABGo5iulovrEjuycBAAEC',
+       file_size: 1873,
+       width: 88,
+       height: 90 },
+     { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABHIhDZyGOiwNuicBAAEC',
+       file_size: 22089,
+       width: 314,
+       height: 320 },
+     { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABFg4f033XyCEuScBAAEC',
+       file_size: 19517,
+       width: 353,
+       height: 360 } ] }
+/Users/yuiwei/Documents/thambot/app.js:17
+    if (response.type == 'text') {
+                ^
+TypeError: Cannot read property 'type' of undefined
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:17:17)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 33,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637070,
+  text: 'frisbee' }
+{ message_id: 34,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637112,
+  photo: 
+   [ { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABGo5iulovrEjuycBAAEC',
+       file_size: 1873,
+       width: 88,
+       height: 90 },
+     { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABHIhDZyGOiwNuicBAAEC',
+       file_size: 22089,
+       width: 314,
+       height: 320 },
+     { file_id: 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABFg4f033XyCEuScBAAEC',
+       file_size: 19517,
+       width: 353,
+       height: 360 } ] }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 35,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637178,
+  text: 'frisbee' }
+null
+/Users/yuiwei/Documents/thambot/app.js:35
+            console.log(util.inspect(data, false, null));
+                        ^
+ReferenceError: util is not defined
+    at /Users/yuiwei/Documents/thambot/app.js:35:25
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:301:28
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:299:17)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+    at Request.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:1050:14)
+    at Request.emit (events.js:129:20)
+    at IncomingMessage.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:996:12)
+    at IncomingMessage.emit (events.js:129:20)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 35,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637178,
+  text: 'frisbee' }
+null
+/Users/yuiwei/Documents/thambot/app.js:35
+            console.log(util.inspect(data, false, null));
+                        ^
+ReferenceError: util is not defined
+    at /Users/yuiwei/Documents/thambot/app.js:35:25
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:301:28
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:299:17)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+    at Request.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:1050:14)
+    at Request.emit (events.js:129:20)
+    at IncomingMessage.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:996:12)
+    at IncomingMessage.emit (events.js:129:20)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 35,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637178,
+  text: 'frisbee' }
+null
+{ message_id: 39,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637246,
+  text: 'yuyen' }
+fs.js:224
+  binding.stat(pathModule._makeLong(path), req);
+          ^
+TypeError: path must be a string
+    at TypeError (native)
+    at Object.fs.exists (fs.js:224:11)
+    at sendSticker (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:453:12)
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:38:13)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 39,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637246,
+  text: 'yuyen' }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 41,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637823,
+  text: '/hello' }
+/Users/yuiwei/Documents/thambot/logic.js:21
+    if (message.text[0] == '/') { cmdArr = input.substr(1).split(' '); cmd = c
+                                           ^
+ReferenceError: input is not defined
+    at Object.getResponse (/Users/yuiwei/Documents/thambot/logic.js:21:44)
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:14:26)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 41,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637823,
+  text: '/hello' }
+null
+/Users/yuiwei/Documents/thambot/app.js:23
+            console.log(util.inspect(data, false, null));
+                        ^
+ReferenceError: util is not defined
+    at /Users/yuiwei/Documents/thambot/app.js:23:25
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:195:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:193:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+    at Request.emit (events.js:110:17)
+    at Request.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:1050:14)
+    at Request.emit (events.js:129:20)
+    at IncomingMessage.<anonymous> (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:996:12)
+    at IncomingMessage.emit (events.js:129:20)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 41,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637823,
+  text: '/hello' }
+null
+{ message_id: 44,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436637877,
+  text: '/help' }
+null
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 46,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712590,
+  text: '/start' }
+{ message_id: 47,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712600,
+  text: 'Frisbee' }
+{ message_id: 48,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712612,
+  text: '/frisbee' }
+{ message_id: 49,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712624,
+  text: 'Yu Yen' }
+{ message_id: 50,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712633,
+  text: '/start' }
+{ message_id: 51,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712672,
+  text: 'frisbee' }
+null
+{ message_id: 53,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712686,
+  text: 'yuyen' }
+{ message_id: 55,
+  from: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  chat: { id: 87951660, first_name: 'khoon hwa', last_name: 'chu' },
+  date: 1436712702,
+  text: '/help' }
+null
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 57,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436754796,
+  contact: 
+   { phone_number: '6593716368',
+     first_name: 'USP Varun "Dood"',
+     last_name: 'Patro',
+     user_id: 102675141 } }
+/Users/yuiwei/Documents/thambot/logic.js:21
+    if (message.text[0] == '/') { cmdArr = message.text.substr(1).split(' '); 
+                    ^
+TypeError: Cannot read property '0' of undefined
+    at Object.getResponse (/Users/yuiwei/Documents/thambot/logic.js:21:21)
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:22:26)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 57,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436754796,
+  contact: 
+   { phone_number: '6593716368',
+     first_name: 'USP Varun "Dood"',
+     last_name: 'Patro',
+     user_id: 102675141 } }
+/Users/yuiwei/Documents/thambot/logic.js:21
+    if (message.text[0] == '/') { cmdArr = message.text.substr(1).split(' '); 
+                    ^
+TypeError: Cannot read property '0' of undefined
+    at Object.getResponse (/Users/yuiwei/Documents/thambot/logic.js:21:21)
+    at null.<anonymous> (/Users/yuiwei/Documents/thambot/app.js:22:26)
+    at emit (events.js:107:17)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:122:26
+    at Array.forEach (native)
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:115:22
+    at /Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:723:24
+    at commonResponseHandler (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:93:16)
+    at Request._callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/lib/telegram-bot.js:721:13)
+    at Request.self.callback (/Users/yuiwei/Documents/thambot/node_modules/telegram-bot-api/node_modules/request/request.js:197:22)
+204-124:thambot yuiwei$ node app.js
+{ message_id: 57,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436754796,
+  contact: 
+   { phone_number: '6593716368',
+     first_name: 'USP Varun "Dood"',
+     last_name: 'Patro',
+     user_id: 102675141 } }
+{ message_id: 58,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436754879,
+  contact: 
+   { phone_number: '6597121536',
+     first_name: 'Khoon',
+     user_id: 87951660 } }
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 59,
+  from: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  chat: { id: 37019292, first_name: 'yw', username: 'yuiwei' },
+  date: 1436755123,
+  sticker: 
+   { width: 512,
+     height: 461,
+     thumb: 
+      { file_id: 'AAQFABMGWrMyAAQKEefJlBihz_wFAAIC',
+        file_size: 5156,
+        width: 128,
+        height: 115 },
+     file_id: 'BQADBQADZgADLXDJAqRrFh_3n3nIAg',
+     file_size: 22222 } }
+^C
+204-124:thambot yuiwei$ 
+204-124:thambot yuiwei$ node app.js
+null
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 62,
+  from: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  chat: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  date: 1436755567,
+  text: 'Thanks thambot!' }
+{ message_id: 63,
+  from: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  chat: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  date: 1436755713,
+  text: 'Frisbee' }
+{ message_id: 64,
+  from: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  chat: 
+   { id: 102675141,
+     first_name: 'Varun',
+     last_name: 'Patro',
+     username: 'varunpatro' },
+  date: 1436755727,
+  text: 'frisbee' }
+null
+^C
+204-124:thambot yuiwei$ node app.js
+^C
+204-124:thambot yuiwei$ node app.js
+{ message_id: 66,
+  from: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  chat: 
+   { id: 49426659,
+     first_name: 'Joey',
+     last_name: 'Yeo',
+     username: 'yeojoey' },
+  date: 1436755844,
+  text: 'frisbee' }
