@@ -50,10 +50,7 @@ function getResponse(message) {
             return objectify(aroundNUS.getTask(pw), 'text', null);
         case 'broadcast':
             if (auth.isLordAlmighty(message.from.id)) {
-                if (isNaN(cmdArr[1])) {
-                    console.log(chalk.yellow("cmdArr[1]: " + cmdArr[1]))
-                    return objectify(errorMessage_NaN, 'text', null);
-                } else if (cmdArr.length != 3) {
+                if (cmdArr.length != 3) {
                     return objectify("incorrect number of args", 'text', null);
                 } else {
                     var error = broadcaster.broadcast(msg, "ankaa");
