@@ -57,6 +57,10 @@ function getResponse(message) {
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
             if (msg == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
             if (msg == 'hello' || msg == 'hi') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
+            if (contains(msg, "bot friend")) return objectify("I have a friend called Gort! Please get to know him. Add @GortBot", 'text', null);
+            if (contains(msg, "thambot")) return objectify("I refuse to answer to anything other than what I've been instructed to.", 'text', null);
+            if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
+            if (contains(msg, "naomi")) return objectify("HARRY POTTARRRRR", 'text', null);
         }
     }
     
@@ -175,6 +179,14 @@ function objectify(text, type, media) {
 
 function sendMessage(msg) {
     return objectify(msg, 'text', null);
+}
+
+function contains(msg, str) {
+    if (msg.indexOf(str) >= 0)   {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
