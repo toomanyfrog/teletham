@@ -23,10 +23,10 @@ function isOGL(id) {
     return false;
 }
 
-function isSM(id) {
+function isNOGL(id) {
     if(isAllowed(id)) {
         if(isOGL(id)) {
-	       return studentsInfo[id].sm;
+	       return studentsInfo[id].nogl;
         }
     }
     return false;
@@ -51,7 +51,7 @@ module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
     isOGL: isOGL,
-    isSM: isSM,
+    isNOGL: isNOGL,
     getFirstName: getFirstName,
     isLordAlmighty: isLordAlmighty
 };

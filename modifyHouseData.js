@@ -75,6 +75,25 @@ function addLetter(houseName, letterToAdd) {
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
 }
+function removeLetter(houseName, letterToRm) {
+    for (var house_name in houses_obj) {
+        if(houses_obj.hasOwnProperty(house_name)) {
+            var house = houses_obj[house_name];
+            for(var letters in house) {
+                if (letters == "letters") {
+                    if (house.hasOwnProperty(letters)) {
+                        if (houseName == house_name) {
+                            house.letters.remove(letterToRm);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
+}
 function clearLetters(houseName) {
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {

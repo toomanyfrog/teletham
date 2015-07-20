@@ -32,6 +32,8 @@ function addStudent(id, firstname, matric, house) {
         value: { firstname: firstname,
                 matric: matric.toUpperCase(),
                 ogl: false,
+                nogl: false,
+                isLordAlmighty: false,
                 house: house },
         enumerable: true
     });
@@ -52,6 +54,8 @@ function addOGL(id, firstname, matric, house) {
         value: { firstname: firstname,
                 matric: matric.toUpperCase(),
                 ogl: true,
+                nogl: false,
+                isLordAlmighty: false,
                 house: house },
         enumerable: true
     });
@@ -74,7 +78,6 @@ function makeOGL(phone) {
             }
         }
     }
-    console.log(JSON.stringify(houses_obj));
    // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "PROMOTED";
 }
@@ -98,43 +101,6 @@ function revokeOGL(phone) {
     return "REVOKED";
 }
 
-function makeStationMaster(phone) {
-    if(!isOGL(phone)) return "If not OGL, how station master?";
-    for (var phone in studentsInfo_obj) {
-        if(studentsInfo_obj.hasOwnProperty(phone)) {
-            var student = studentsInfo_obj[phone];
-            for(var property in student) {
-                if (property == "sm") {
-                    if (student.hasOwnProperty(property)) {
-                        if (student.sm == false) {
-                            student.sm = true;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return "PROMOTED";
-}
-
-function revokeStationMaster(phone) {
-    if(!isOGL(phone)) return "If not OGL, how station master?";
-    for (var phone in studentsInfo_obj) {
-        if(studentsInfo_obj.hasOwnProperty(phone)) {
-            var student = studentsInfo_obj[phone];
-            for(var property in student) {
-                if (property == "sm") {
-                    if (student.hasOwnProperty(property)) {
-                        if (student.sm == true) {
-                            student.sm = false;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return "REVOKED";
-}
 
 function isValidMatric(matric) {
     var m = matric.toUpperCase();
@@ -162,6 +128,5 @@ module.exports = {
     'addOGL': addOGL,
     'makeOGL': makeOGL,
     'revokeOGL': revokeOGL,
-    'makeStationMaster': makeStationMaster,
-    'revokeStationMaster': revokeStationMaster
+    'addStudent': addStudent
 };
