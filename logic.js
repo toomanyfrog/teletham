@@ -3,7 +3,7 @@ var aroundNUS = require('./aroundNUS');
 var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
 var msgs = require('./messages');
-var broadcaster = require('./broadcaster')
+var broadcaster = require('./broadcaster');
 
 
 
@@ -39,7 +39,7 @@ function getResponse(message) {
         }
     }
     
-    if (message.text != null) {
+    if (message.text !== null) {
         
         msg = message.text.toLowerCase();
 
@@ -56,13 +56,9 @@ function getResponse(message) {
     }
     
     switch(cmd) {
-            
-            
         //////////////////////////////////////////////MESSAGES
         case 'help':
             return sendMessage(msgs.help);
-            
-            break;
         case 'ogl_help': 
             if (!auth.isOGL(message.from.id)) {
                 return sendMessage(msgs.not_ogl);
@@ -77,7 +73,7 @@ function getResponse(message) {
                     return objectify(msgs.command_error, 'text', null);
                 } else {
                     var error = broadcaster.broadcast(cmdArr[2], cmdArr[1]);
-                    if (error != null) {
+                    if (error !== null) {
                         return objectify(error, 'text', null);    
                     }
                     return objectify("Message sent.", 'text', null);
@@ -117,7 +113,6 @@ function getResponse(message) {
             break;
         case 'letters':
             return objectify(dataManip.getLetters(auth.getHouse(message.from.id)), 'text', null);
-            break;
         case 'removeletter':
             if (!auth.isNOGL(message.from.id)) { return sendMessage(msgs.unauth); }
             else {
@@ -154,7 +149,6 @@ function getResponse(message) {
             break;    
         case 'penalize':
         case 'penalise':
-
             if (!auth.isOGL(message.from.id)) { return sendMessage(msgs.not_ogl); }
             else if (cmdArr.length != 3) { return sendMessage(msgs.command_error); }
             else if (isNaN(cmdArr[2])) { return sendMessage(msgs.nan_error); }
@@ -164,16 +158,10 @@ function getResponse(message) {
                 return objectify(dataManip.subtractPoints(cmdArr[1], cmdArr[2]), 'text', null);
             } 
             break;
-                
-              
-                
-                
-                
         default:
-            return { text:"", type:'text', media:null, valid:false } ;
+            return { text:"", type:'text', media:null, valid:false };
+        }
     }
-    
-    
 }
 
 function objectify(text, type, media) {
