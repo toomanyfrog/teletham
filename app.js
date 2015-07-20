@@ -19,17 +19,18 @@ console.log(chalk.blue("                            "))
 
 api.on('message', function(message)
 {
-    logger.logMessage("incommingMessage", message);
+    logger.logMessage("incomingMessage", message);
     logger.storeLogs();
 
     console.log(chalk.green("Incoming Message:") + JSON.stringify(message));
+    if (!message.text) { return; }
 
     var response = logic.getResponse(message);
 
     logger.logMessage("outgoingMessage", response);
     logger.storeLogs();
 
-    
+
 
     if (response.valid) {
         if (response.type == 'text') {

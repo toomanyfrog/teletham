@@ -45,16 +45,19 @@ function getResponse(message) {
             }
         }
     }
-
-    
-    if (message.text !== null) {
         
         msg = message.text.toLowerCase();
 
         if (message.text[0] == '/') {
-            
             cmdArr = (msg.substr(1)).split(' '); 
             cmd = cmdArr[0]; 
+            if (cmd === "broadcast") {
+                var temp = cmdArr
+                cmdArr = [];
+                cmdArr[0] = temp[0];
+                cmdArr[1] = temp[1]
+                cmdArr[2] = message.text.split("%")[1];
+            }
         }
         else {
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
@@ -65,7 +68,7 @@ function getResponse(message) {
             if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
             if (contains(msg, "naomi")) return objectify("HARRY POTTARRRRR", 'text', null);
         }
-    }
+    
     
     switch(cmd) {
         //////////////////////////////////////////////MESSAGES
