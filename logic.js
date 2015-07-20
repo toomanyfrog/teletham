@@ -3,6 +3,8 @@ var aroundNUS = require('./aroundNUS');
 var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
 var msgs = require('./messages');
+var broadcaster = require('./broadcaster')
+
 
 
 function getResponse(message) {
@@ -42,6 +44,22 @@ function getResponse(message) {
             } else {
                 return sendMessage(msgs.ogl_help);
             }
+            break;
+            
+        case 'broadcast':
+            if (auth.isLordAlmighty(message.from.id)) {
+                if (cmdArr.length != 3) {
+                    return objectify(msgs.command_error, 'text', null);
+                } else {
+                    var error = broadcaster.broadcast(cmdArr[2], cmdArr[1]);
+                    if (error != null) {
+                        return objectify(error, 'text', null);    
+                    }
+                    return objectify("Message sent.", 'text', null);
+                }
+            } else {
+                return objectify(msgs.unauth, 'text', null);
+            }   
             break;
         case 'password':
             if (cmdArr.length != 2) { return sendMessage(msgs.command_error); } 
