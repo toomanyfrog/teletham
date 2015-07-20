@@ -9,10 +9,11 @@ var broadcaster = require('./broadcaster')
 
 function getResponse(message) {
     var cmd, cmdArr, msg;
-    
-    if (!auth.isAllowed(message.from.id) && !auth.isOGL(message.from.id)) {
-        return sendMessage("Are you a USP freshman??????????");
-    } else {
+    if (message.text != null) {
+        
+        msg = message.text.toLowerCase();
+
+        if (!auth.isAllowed(message.from.id) && !auth.isOGL(message.from.id)) {
         if (message.text[0] == '/') {        
             cmdArr = (msg.substr(1)).split(' '); 
             cmd = cmdArr[0]; 
@@ -36,13 +37,11 @@ function getResponse(message) {
                     return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
                 }
                 break;
+            default:
+                return sendMessage("Are you a USP freshman??????????");
+            }
         }
     }
-    
-    if (message.text != null) {
-        
-        msg = message.text.toLowerCase();
-
         if (message.text[0] == '/') {
             
             cmdArr = (msg.substr(1)).split(' '); 
@@ -51,7 +50,7 @@ function getResponse(message) {
         else {
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
             if (msg == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
-            if (msg == 'hello') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
+            if (msg == 'hello' || msg == 'hi') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
         }
     }
     
