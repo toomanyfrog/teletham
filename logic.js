@@ -3,6 +3,7 @@ var aroundNUS = require('./aroundNUS');
 var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
 var chalk = require('chalk')
+var broadcaster = require('./broadcaster')
  
 
 //var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
@@ -53,7 +54,7 @@ function getResponse(message) {
                 if (cmdArr.length != 3) {
                     return objectify("incorrect number of args", 'text', null);
                 } else {
-                    var error = broadcaster.broadcast(msg, "ankaa");
+                    var error = broadcaster.broadcast(cmdArr[2], cmdArr[1]);
                     if (error != null) {
                         return objectify(error, 'text', null);    
                     }
