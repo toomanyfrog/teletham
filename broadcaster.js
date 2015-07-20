@@ -1,6 +1,6 @@
 var chalk = require('chalk');
 var telegram = require('telegram-bot-api');
-var jf = require('jsonfile');
+var fs = require('fs');
 var admin = require('./admin')
 var logger = require('./logger')
 var api = new telegram({
@@ -11,22 +11,30 @@ var api = new telegram({
 });
 
 var studentsInfoFilepath =  './private/students_info.json';
-var students = jf.readFileSync(studentsInfoFilepath);
-var houses = {}
-houses.aviur = []
-houses.amaranth = []
-houses.varjo = []
-houses.levian = []
-houses.arete = []
-houses.nidhogg = []
+var students =  JSON.parse(fs.readFileSync(studentsInfoFilepath).toString()); //OBJECT
 
-Object.keys(students).forEach(function (student) {
+
+var houses = {};
+
+populateHouseList();
+
+function populateHouseList() {
+    houses.aviur = []
+    houses.amaranth = []
+    houses.varjo = []
+    houses.levian = []
+    houses.arete = []
+    houses.nidhogg = []
+    Object.keys(students).forEach(function (student) {
 	var house = students[student].house
 	houses[house].push(student)
 });
+}
 
 
 function broadcast(msg, house) {
+    students =  JSON.parse(fs.readFileSync(studentsInfoFilepath).toString());
+    populateHouseList();
 	house = house.replace(/ /g,'');
     if (!admin.isValidHouse(house) && house != "all") {
     	console.log(chalk.yellow("invalid house:", house))
@@ -68,5 +76,5 @@ function broadcast(msg, house) {
 }
 
 module.exports = {
-    broadcast: broadcast
+    broadcast: broadcast,
 }

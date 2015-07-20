@@ -17,33 +17,34 @@ function getResponse(message) {
         msg = message.text.toLowerCase();
 
         if (!auth.isAllowed(message.from.id) && !auth.isOGL(message.from.id)) {
-        if (message.text[0] == '/') {        
-            cmdArr = (msg.substr(1)).split(' '); 
-            cmd = cmdArr[0]; 
-            switch(cmd) {
-            case 'addfreshie':
-                if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
-                else {
-                    var matric = cmdArr[1];
-                    var house = cmdArr[2];
-                    return objectify(admin.addStudent(message.from.id, 
-                                                      message.from.first_name, 
-                                                      matric, 
-                                                      house), 'text', null);
+            if (message.text[0] == '/') {        
+                cmdArr = (msg.substr(1)).split(' '); 
+                cmd = cmdArr[0]; 
+                switch(cmd) {
+                case 'addfreshie':
+                    if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
+                    else {
+                        var matric = cmdArr[1];
+                        var house = cmdArr[2];
+                        return objectify(admin.addStudent(message.from.id, 
+                                                          message.from.first_name, 
+                                                          matric, 
+                                                          house), 'text', null);
+                    }
+                    break;
+                case 'addogl': 
+                    if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
+                    else {
+                        var matric = cmdArr[1];
+                        var house = cmdArr[2];
+                        return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
+                    }
+                    break;
+                default:
+                    return sendMessage("Are you a USP freshman??????????");
                 }
-                break;
-            case 'addogl': 
-                if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
-                else {
-                    var matric = cmdArr[1];
-                    var house = cmdArr[2];
-                    return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
-                }
-                break;
-            default:
-                return sendMessage("Are you a USP freshman??????????");
             }
-        }
+            return sendMessage("Are you a USP freshman??????????");
     }
         
         msg = message.text.toLowerCase();
@@ -81,7 +82,24 @@ function getResponse(message) {
                 return sendMessage(msgs.ogl_help);
             }
             break;
-            
+        case 'remove_student': 
+            if (!auth.isOGL(message.from.id)) {
+                return sendMessage(msgs.not_ogl);
+            } else if (cmdArr.length != 2) {
+                return sendMessage(msgs.command_error);
+            } else {
+                return objectify(admin.removeStudent(cmdArr[1]), 'text', null);
+            }
+            break;
+        case 'get_students':
+            if (!auth.isOGL(message.from.id)) {
+                return sendMessage(msgs.not_ogl);
+            } else if (cmdArr.length != 2) {
+                return sendMessage(msgs.command_error);
+            } else {
+                return objectify(admin.getStudents(cmdArr[1]), 'text', null);
+            }
+            break;
         case 'broadcast':
             if (auth.isLordAlmighty(message.from.id)) {
                 if (cmdArr.length != 3) {

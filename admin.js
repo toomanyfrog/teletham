@@ -18,6 +18,27 @@ var already_registered_msg = "You're already registered, you dummy!";
 var bad_matric_msg = "Bad matric number!";
 var bad_house_msg = "That's not one of the houses...";
 
+
+
+var houses = {};
+
+populateArrays();
+
+function populateArrays() {
+    houses.aviur = []
+    houses.amaranth = []
+    houses.varjo = []
+    houses.levian = []
+    houses.arete = []
+    houses.nidhogg = []
+    Object.keys(studentsInfo_obj).forEach(function (student) {
+        
+        var studentObj = studentsInfo_obj[student];
+        var house = studentObj.house
+        houses[house].push([studentObj.firstname, student]);
+    });
+}
+
 function addStudent(id, firstname, matric, house) {
     if (studentsInfo_obj.hasOwnProperty(id)) {
         return already_registered_msg;
@@ -28,17 +49,37 @@ function addStudent(id, firstname, matric, house) {
     if (!isValidHouse(house)) {
         return bad_house_msg;
     }
-    Object.defineProperty(studentsInfo_obj,id,{
-        value: { firstname: firstname,
-                matric: matric.toUpperCase(),
-                ogl: false,
-                nogl: false,
-                isLordAlmighty: false,
-                house: house },
-        enumerable: true
-    });
-    fs.writeFile(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
+    studentsInfo_obj[id] = {
+            firstname: firstname,
+            matric: matric.toUpperCase(),
+            ogl: false,
+            nogl: false,
+            isLordAlmighty: false,
+            house: house
+    };
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "Added!";
+}
+
+function removeStudent(id) {
+    if (!studentsInfo_obj.hasOwnProperty(id)) {
+        return "Student doesn't exist";
+    }
+    
+    delete studentsInfo_obj[id];
+    console.log("deleted obj: " + studentsInfo_obj[id])
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
+    return "Removed!";
+}
+
+function getStudents(house) {
+    populateArrays();
+    var retStr = "";
+    houses[house].forEach(function (studentObj) {
+        retStr += studentObj[0] + " " + studentObj[1] + "\n";
+    });
+    return retStr;
+                          
 }
 function addOGL(id, firstname, matric, house) {
     if (studentsInfo_obj.hasOwnProperty(id)) {
@@ -50,16 +91,16 @@ function addOGL(id, firstname, matric, house) {
     if (!isValidHouse(house)) {
         return bad_house_msg;
     }
-    Object.defineProperty(studentsInfo_obj,id,{
-        value: { firstname: firstname,
-                matric: matric.toUpperCase(),
-                ogl: true,
-                nogl: false,
-                isLordAlmighty: false,
-                house: house },
-        enumerable: true
-    });
-    fs.writeFile(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
+    studentsInfo_obj[id] = {
+            firstname: firstname,
+            matric: matric.toUpperCase(),
+            ogl: true,
+            nogl: false,
+            isLordAlmighty: false,
+            house: house
+    };
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
+    populateArrays();
     return "Added!";
 }
 
@@ -127,5 +168,7 @@ module.exports = {
     'addOGL': addOGL,
     'makeOGL': makeOGL,
     'revokeOGL': revokeOGL,
-    'addStudent': addStudent
+    'addStudent': addStudent,
+    'removeStudent': removeStudent,
+    'getStudents': getStudents
 };
