@@ -33,32 +33,37 @@ function broadcast(msg, house) {
     }
     if (house != "all") {
         houses[house].forEach(function(num) {
-            api.sendMessage({
-                chat_id: num,
-                text: msg,
-            }, function(err, data) {
+        	broadcastObj = {}
+        	broadcastObj.chat_id = num;
+        	broadcastObj.text = msg;
+            api.sendMessage(broadcastObj, function(err, data) {
                 if (err) {
                		console.log(chalk.read("Error Broadcasting Text Message: ") + err);
                	}
             });
+
+            logger.logMessage("broadcastMessage", broadcastObj);
+    		logger.storeLogs();
         });
         return null;
     } else {
         Object.keys(houses).forEach(function(house) {
             houses[house].forEach(function(num) {
-                api.sendMessage({
-                    chat_id: num,
-                    text: msg,
-                }, function(err, data) {
+                broadcastObj = {}
+	        	broadcastObj.chat_id = num;
+	        	broadcastObj.text = msg;
+	            api.sendMessage(broadcastObj, function(err, data) {
                 	if (err) {
                 		console.log(chalk.read("Error Broadcasting Text Message: ") + err);
                 	}
                 });
+
+                logger.logMessage("broadcastMessage", broadcastObj);
+	    		logger.storeLogs();
             });
         })
         return null;
     }
-
 }
 
 module.exports = {

@@ -1,4 +1,5 @@
 var telegram = require('telegram-bot-api');
+var chalk = require('chalk')
 var logic = require('./logic.js');
 var api = new telegram({
         token: '111443989:AAG2biy7U2_HuEp-akem07XtFNnbpHcDL20',
@@ -11,9 +12,17 @@ var api = new telegram({
 
 api.on('message', function(message)
 {
-    console.log(message);
+    logger.logMessage("incommingMessage", message);
+    logger.storeLogs();
+
+    console.log(chalk.green("Incoming Message:", message));
 
     var response = logic.getResponse(message);
+
+    logger.logMessage("outgoingMessage", response);
+    logger.storeLogs();
+
+    
 
     if (response.valid) {
         if (response.type == 'text') {
