@@ -1,14 +1,4 @@
 //@author YW
-/**
- "6593716368": {
-        "firstname": "Varun",
-        "lastname": "Patro",
-        "matric": "A0131729E",
-        "email": "varunpatro@u.nus.edu",
-        "ogl": true,
-        "house": "ianthe"
-    },
-    **/
 
 var fs = require('fs');
 var studentsInfoFilepath =  './private/students_info.json';

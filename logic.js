@@ -11,7 +11,7 @@ var notOGLMessage = "Hey, you're not an OGL!";
 var helpMessage =
     'Here\'s what you can ask Thambot! ' + 
     '\nType /points to get your house\'s current points.' +
-    '\nType /password [PASSWORD] to enter in a password for an AcrossNUS station.' + 
+    // '\nType /password [PASSWORD] to enter in a password for an AcrossNUS station.' + 
     "\nType /ogl if you are an OGL for special OGL commands.";
 
 var bad_house_msg = "That's not one of the houses...";
