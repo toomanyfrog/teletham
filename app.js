@@ -10,13 +10,19 @@ var api = new telegram({
 });
 
 
+console.log(chalk.blue("============================"))
+console.log(chalk.blue("                            "))
+console.log(chalk.blue("      TeleTham Started      "))
+console.log(chalk.blue("                            "))
+console.log(chalk.blue("============================"))
+console.log(chalk.blue("                            "))
 
 api.on('message', function(message)
 {
     logger.logMessage("incommingMessage", message);
     logger.storeLogs();
 
-    console.log(chalk.green("Incoming Message:", message));
+    console.log(chalk.green("Incoming Message:") + JSON.stringify(message));
 
     var response = logic.getResponse(message);
 

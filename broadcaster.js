@@ -2,6 +2,7 @@ var chalk = require('chalk');
 var telegram = require('telegram-bot-api');
 var jf = require('jsonfile');
 var admin = require('./admin')
+var logger = require('./logger')
 var api = new telegram({
     token: '111443989:AAG2biy7U2_HuEp-akem07XtFNnbpHcDL20',
     updates: {

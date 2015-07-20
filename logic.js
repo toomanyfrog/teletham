@@ -4,7 +4,7 @@ var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
 var msgs = require('./messages');
 var broadcaster = require('./broadcaster');
-var broadcastLibraryMessages = 
+var jf = require('jsonfile');
 
 var broadcastMsgFilepath =  './private/messages.json';
 var broadcastLibraryMessages = jf.readFileSync(broadcastMsgFilepath);
@@ -99,7 +99,7 @@ function getResponse(message) {
                     if (!broadcastLibMsg) {
                         return objectify("invalid lib message", 'text', null);  
                     }
-                    var error = broadcaster.broadcast(cmdArr[2], broadcastLibMsg);
+                    var error = broadcaster.broadcast(broadcastLibMsg, cmdArr[1]);
                     if (error !== null) {
                         return objectify(error, 'text', null);    
                     }

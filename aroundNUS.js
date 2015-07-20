@@ -5,7 +5,6 @@ var stations = jf.readFileSync(stationsFilepath);
 var stationsArray; var passwordsArray;
 var lettersArray;
 readStations(stations);
-console.log(passwordsArray);
 var wrongPasswordMsg = "Wrong password!";
 
 function getTask(password) {
