@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Yui Wei, Yeo Joey",
   "dependencies": {
+    "chalk": "^1.1.0",
     "jsonfile": "^2.2.1",
     "telegram-bot-api": "^0.3.0"
   },

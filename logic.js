@@ -10,7 +10,7 @@ var broadcaster = require('./broadcaster')
 function getResponse(message) {
     var cmd, cmdArr, msg;
     
-    if (!auth.isAllowed(message.from.id)) {
+    if (!auth.isAllowed(message.from.id) && !auth.isOGL(message.from.id)) {
         return sendMessage("Are you a USP freshman??????????");
     }
     

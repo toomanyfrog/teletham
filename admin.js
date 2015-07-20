@@ -96,7 +96,6 @@ function revokeOGL(phone) {
             }
         }
     }
-    console.log(JSON.stringify(houses_obj));
    // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "REVOKED";
 }
