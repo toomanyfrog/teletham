@@ -32,7 +32,7 @@ function getResponse(message) {
         if (message.text == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
         if (message.text == 'hello') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
     }
-    console.log(cmd);
+    console.log(chalk.blue("CMD: ") + cmdArr);
     switch(cmd) {
         //////////////////////////////////////////////MESSAGES
         case 'help':
@@ -51,10 +51,16 @@ function getResponse(message) {
         case 'broadcast':
             if (auth.isLordAlmighty(message.from.id)) {
                 if (isNaN(cmdArr[1])) {
+                    console.log(chalk.yellow("cmdArr[1]: " + cmdArr[1]))
                     return objectify(errorMessage_NaN, 'text', null);
+                } else if (cmdArr.length != 3) {
+                    return objectify("incorrect number of args", 'text', null);
                 } else {
-                    //console.log(cmd[1]);
-                    //return broadcaster.broadcast(msg, "ankaa");
+                    var error = broadcaster.broadcast(msg, "ankaa");
+                    if (error != null) {
+                        return objectify(error, 'text', null);    
+                    }
+                    return objectify("Message sent.", 'text', null);
                 }
             } else {
                 return objectify("Hey, you're not allowed back here!", 'text', null);

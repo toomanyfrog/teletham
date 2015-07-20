@@ -1,3 +1,4 @@
+var chalk = require('chalk');
 var telegram = require('telegram-bot-api');
 var logic = require('./logic.js');
 var api = new telegram({
@@ -18,7 +19,7 @@ api.on('message', function(message)
             chat_id: message.chat.id,
             text: response.text
         }, function(err, data)  {
-            console.log(err);
+            console.log(chalk.red("Error Sending Text Message: ") + err);
            // console.log(util.inspect(data, false, null));
         });
     } else if (response.type == 'image') {
@@ -28,7 +29,7 @@ api.on('message', function(message)
             // you can also send file_id here as string (as described in telegram bot api documentation)
             photo: response.media
         }, function(err, data)  {
-            console.log(err);
+            console.log(chalk.red("Error Sending Photo Message: ") + err);
            // console.log(util.inspect(data, false, null));
         });
     } else if (response.type == 'sticker') {
