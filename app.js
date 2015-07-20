@@ -7,15 +7,12 @@ var api = new telegram({
     }
 });
 
-
-
 api.on('message', function(message)
 {
     console.log(message);
 
     var response = logic.getResponse(message);
 
-  
     if (response.type == 'text') {
         api.sendMessage({
             chat_id: message.chat.id,
@@ -40,9 +37,6 @@ api.on('message', function(message)
             sticker: response.media
         });
     }
-                    
-    
-
 });
 
 
