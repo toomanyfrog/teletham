@@ -4,7 +4,10 @@ var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
 var msgs = require('./messages');
 var broadcaster = require('./broadcaster');
+var broadcastLibraryMessages = 
 
+var broadcastMsgFilepath =  './private/messages.json';
+var broadcastLibraryMessages = jf.readFileSync(broadcastMsgFilepath);
 
 
 function getResponse(message) {
@@ -78,6 +81,25 @@ function getResponse(message) {
                     return objectify(msgs.command_error, 'text', null);
                 } else {
                     var error = broadcaster.broadcast(cmdArr[2], cmdArr[1]);
+                    if (error !== null) {
+                        return objectify(error, 'text', null);    
+                    }
+                    return objectify("Message sent.", 'text', null);
+                }
+            } else {
+                return objectify(msgs.unauth, 'text', null);
+            }   
+            break;
+        case 'broadcastlib':
+            if (auth.isLordAlmighty(message.from.id)) {
+                if (cmdArr.length != 3) {
+                    return objectify(msgs.command_error, 'text', null);
+                } else {
+                    var broadcastLibMsg =  broadcastLibraryMessages[cmdArr[2]]
+                    if (!broadcastLibMsg) {
+                        return objectify("invalid lib message", 'text', null);  
+                    }
+                    var error = broadcaster.broadcast(cmdArr[2], broadcastLibMsg);
                     if (error !== null) {
                         return objectify(error, 'text', null);    
                     }
@@ -181,12 +203,6 @@ function sendMessage(msg) {
 module.exports = {
     'getResponse': getResponse
 }
-
-
-
-
-
-
 
 var yuyen_sticker = 'BQADAgADAgEAAvR7GQABm0hmTR_O2gIC';
 var varun_frisbee = 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABHIhDZyGOiwNuicBAAEC';
