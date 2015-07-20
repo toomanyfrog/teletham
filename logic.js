@@ -2,6 +2,7 @@ var admin = require('./admin');
 var aroundNUS = require('./aroundNUS');
 var auth = require('./auth');
 var dataManip = require('./modifyHouseData');
+var chalk = require('chalk')
  
 
 //var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
@@ -24,10 +25,10 @@ var oglHelpMessage =
 
 
 function getResponse(message) {
+
     var cmd, cmdArr;
     if (message.text != null) {
         if (message.text[0] == '/') { cmdArr = (message.text.substr(1)).split(' '); cmd = cmdArr[0]; }
-        if (message.text == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
         if (message.text == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
         if (message.text == 'hello') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
     }
@@ -99,10 +100,13 @@ function getResponse(message) {
             return objectify(admin.revokeStationMaster(cmd[1]), 'text', null);
         //////////////////////////////////////////////LETTERS 
         case 'addletter':
-            if (!auth.isOGL(message.from.id)) {
+            if (!auth.isNOGL(message.from.id) && !auth.isLordAlmighty(message.from.id)) {
                 return objectify(notOGLMessage, 'text', null);
             }
-            if (cmdArr.length != 2) return objectify("try again", 'text', null);
+            if (cmdArr.length != 2) {
+                console.log(chalk.red("Not 2 Args"))
+                return objectify("try again", 'text', null);
+            }
             if (cmdArr[1].length > 1) {
                 return objectify("A letter has ONE CHARACTER", 'text', null);
             } else {
@@ -111,7 +115,7 @@ function getResponse(message) {
         case 'letters':
             return objectify(dataManip.getLetters(auth.getHouse(message.from.id)), 'text', null);
         case 'clearletters':
-            if(!auth.isOGL(message.from.id)) {
+            if (!auth.isNOGL(message.from.id) && !auth.isLordAlmighty(message.from.id)) {
                 return objectify(notOGLMessage, 'text', null);
             }
             return objectify(dataManip.clearLetters(auth.getHouse(message.from.id)), 'text', null);
@@ -130,7 +134,7 @@ function getResponse(message) {
                 return objectify("try again", 'text',null);
             }
         case 'addpoints':
-            if (!auth.isSM(message.from.id)) {
+            if (!auth.isOGL(message.from.id) && !auth.isNOGL(message.from.id) && !auth.isLordAlmighty(message.from.id)) {
                 return objectify(notOGLMessage, 'text', null);
             }
             if (cmdArr.length != 3) return objectify("try again", 'text', null);
@@ -143,7 +147,7 @@ function getResponse(message) {
             }
         case 'minuspoints':
         case 'subtractpoints':
-            if (!auth.isSM(message.from.id)) {
+            if (!auth.isSM(message.from.id) && !auth.isOGL(message.from.id) && !auth.isLordAlmighty(message.from.id)) {
                 return objectify(notOGLMessage, 'text', null);
             }
             if (cmdArr.length != 3) return objectify("try again", 'text', null);
@@ -170,10 +174,6 @@ function objectify(text, type, media) {
 module.exports = {
     'getResponse': getResponse
 }
-
-
-
-
 
 
 

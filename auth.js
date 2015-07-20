@@ -23,6 +23,13 @@ function isOGL(id) {
     return false;
 }
 
+function isNOGL(id) {
+    if(isAllowed(id)) {
+       return studentsInfo[id].nogl;
+    }
+    return false;
+}
+
 function isSM(id) {
     if(isAllowed(id)) {
         if(isOGL(id)) {
@@ -51,6 +58,7 @@ module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
     isOGL: isOGL,
+    isNOGL: isNOGL,
     isSM: isSM,
     getFirstName: getFirstName,
     isLordAlmighty: isLordAlmighty
