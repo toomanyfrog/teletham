@@ -1,6 +1,7 @@
 var telegram = require('telegram-bot-api');
 var chalk = require('chalk')
 var logic = require('./logic.js');
+var logger = require('./logger')
 var api = new telegram({
         token: '111443989:AAG2biy7U2_HuEp-akem07XtFNnbpHcDL20',
         updates: {
