@@ -2,7 +2,7 @@ var not_ogl = "Hey, you're not an OGL!";
 var help =
     'Here\'s what you can ask Thambot! ' + 
     '\nType /points to get your house\'s current points.' +
-    '\nType /password [PASSWORD] to enter in a password for an AcrossNUS station.' + 
+   // '\nType /password [PASSWORD] to enter in a password for an AcrossNUS station.' + 
     "\nType /ogl_help if you are an OGL and you need help";
 
 var bad_house = "That's not one of the houses...";

@@ -12,6 +12,31 @@ function getResponse(message) {
     
     if (!auth.isAllowed(message.from.id) && !auth.isOGL(message.from.id)) {
         return sendMessage("Are you a USP freshman??????????");
+    } else {
+        if (message.text[0] == '/') {        
+            cmdArr = (msg.substr(1)).split(' '); 
+            cmd = cmdArr[0]; 
+            switch(cmd) {
+            case 'addfreshie':
+                if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
+                else {
+                    var matric = cmdArr[1];
+                    var house = cmdArr[2];
+                    return objectify(admin.addStudent(message.from.id, 
+                                                      message.from.first_name, 
+                                                      matric, 
+                                                      house), 'text', null);
+                }
+                break;
+            case 'addogl': 
+                if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
+                else {
+                    var matric = cmdArr[1];
+                    var house = cmdArr[2];
+                    return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
+                }
+                break;
+        }
     }
     
     if (message.text != null) {
@@ -68,22 +93,7 @@ function getResponse(message) {
                 return objectify(aroundNUS.getTask(pw), 'text', null); 
             }
             break;
-        case 'addfreshie':
-            if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
-            else {
-                var matric = cmdArr[1];
-                var house = cmdArr[2];
-                return objectify(admin.addStudent(message.from.id, message.from.first_name, matric, house), 'text', null);
-            }
-            break;
-        case 'addogl': 
-            if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
-            else {
-                var matric = cmdArr[1];
-                var house = cmdArr[2];
-                return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
-            }
-            break;
+        
         case 'makeogl':
             if(cmdArr.length!=2) { return sendMessage(msgs.command_error);  }
             else if (!auth.isLordAlmighty(message.from.id)) { return sendMessage(msgs.unauth); }
