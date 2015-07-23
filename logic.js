@@ -7,6 +7,7 @@ var broadcaster = require('./broadcaster');
 var jf = require('jsonfile');
 
 var broadcastMsgFilepath =  './private/messages.json';
+var chalk = require('chalk');
 var broadcastLibraryMessages = jf.readFileSync(broadcastMsgFilepath);
 
 
@@ -167,8 +168,9 @@ function getResponse(message) {
             else {
                 if (cmdArr.length != 2) { return sendMessage(msgs.command_error); }
                 else if (cmdArr[1].length > 1) { return sendMessage("A letter has ONE CHARACTER"); }
-                else { 
-                    return objectify(dataManip.addLetter(auth.getHouse(message.from.id), cmdArr[1]), 'text', null); 
+                else {
+                    var letterToAdd = cmdArr[1].toUpperCase()
+                    return objectify(dataManip.addLetter(auth.getHouse(message.from.id), letterToAdd), 'text', null); 
                 }
             }
             break;

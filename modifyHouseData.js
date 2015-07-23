@@ -5,6 +5,7 @@ For as long as server running, uses houses_obj for data manipulation, and writes
 
 var fs = require('fs');
 var jf = require("jsonfile");
+var chalk = require('chalk');
 
 var housesFilepath =  './private/houses.json';
 var houses_obj = JSON.parse(fs.readFileSync(housesFilepath).toString()); //OBJECT
@@ -73,7 +74,7 @@ function addLetter(houseName, letterToAdd) {
     }
 
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
-    return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
+    return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters.join(', ');
 }
 function removeLetter(houseName, letterToRm) {
     for (var house_name in houses_obj) {
