@@ -99,6 +99,7 @@ function addOGL(id, firstname, matric, house) {
             isLordAlmighty: false,
             house: house
     };
+    
     fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     populateArrays();
     return "Added!";
@@ -120,7 +121,8 @@ function makeOGL(phone) {
             }
         }
     }
-   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "PROMOTED";
 }
 
@@ -139,11 +141,18 @@ function revokeOGL(phone) {
             }
         }
     }
-   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "REVOKED";
 }
 
-function makeNOGL(phone) {
+function makeNOGL(phone, house) {
+    if (!house) {
+        return "Enter a house after phoneID."
+    }
+    if (!isValidHouse(house)) {
+        return '"' + house + '" is an invalid house. Try again'
+    }
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
             var student = studentsInfo_obj[phone];
@@ -156,7 +165,8 @@ function makeNOGL(phone) {
             }
         }
     }
-   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "PROMOTED to NOGL";
 }
 
@@ -168,12 +178,14 @@ function revokeNOGL(phone) {
                 if (property == "nogl") {
                     if (student.hasOwnProperty(property)) {
                         student.nogl = false;
+                        student.nogl_house = ""
                     }
                 }
             }
         }
     }
-   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    
+    fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "REVOKED NOGL";
 }
 
