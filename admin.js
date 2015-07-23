@@ -110,6 +110,7 @@ function addOGL(id, firstname, matric, house) {
 
 
 function makeOGL(phone) {
+    var isSuccessful = false
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
             var student = studentsInfo_obj[phone];
@@ -118,6 +119,7 @@ function makeOGL(phone) {
                     if (student.hasOwnProperty(property)) {
                         if (student.ogl == false) {
                             student.ogl = true;
+                            isSuccessful = true;
                         }
                     }
                 }
@@ -125,11 +127,15 @@ function makeOGL(phone) {
         }
     }
     
+    if (!isSuccessful) {
+        return "Error occurred while making OGL. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "PROMOTED";
 }
 
 function revokeOGL(phone) {
+    var isSuccessful = false;
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
             var student = studentsInfo_obj[phone];
@@ -138,6 +144,7 @@ function revokeOGL(phone) {
                     if (student.hasOwnProperty(property)) {
                         if (student.ogl == true) {
                             student.ogl = false;
+                            isSuccessful = true;
                         }
                     }
                 }
@@ -145,11 +152,15 @@ function revokeOGL(phone) {
         }
     }
     
+    if (!isSuccessful) {
+        return "Error occurred while revoking OGL. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "REVOKED";
 }
 
 function makeNOGL(phone, house) {
+    var isSuccessful = false;
     if (!house) {
         return "Enter a house after phoneID."
     }
@@ -164,17 +175,22 @@ function makeNOGL(phone, house) {
                     if (student.hasOwnProperty(property)) {
                         student.nogl = true;
                         student.nogl_house = house;
+                        isSuccessful = true;
                     }
                 }
             }
         }
     }
     
+    if (!isSuccessful) {
+        return "Error occurred while making NOGL. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "PROMOTED to NOGL";
 }
 
 function revokeNOGL(phone) {
+    var isSuccessful = false;
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
             var student = studentsInfo_obj[phone];
@@ -183,12 +199,16 @@ function revokeNOGL(phone) {
                     if (student.hasOwnProperty(property)) {
                         student.nogl = false;
                         student.nogl_house = ""
+                        isSuccessful = true;
                     }
                 }
             }
         }
     }
     
+    if (!isSuccessful) {
+        return "Error occurred while revoking NOGL. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFileSync(studentsInfoFilepath, JSON.stringify(studentsInfo_obj));
     return "REVOKED NOGL";
 }
