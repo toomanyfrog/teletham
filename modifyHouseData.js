@@ -58,7 +58,7 @@ function getPoints(house_name) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////// LETTERS
 
 function addLetter(houseName, letterToAdd) {
-    if (typeof letterToRm === 'string') {
+    if (typeof letterToAdd === 'string') {
         letterToAdd = letterToAdd.toUpperCase()
     }
     var isSuccessful = false
@@ -115,7 +115,7 @@ function removeLetter(houseName, letterToRm) {
         return "Error occurred while removing letter. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
     }
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
-    return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
+    return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters.join(', ');
 }
 function clearLetters(houseName) {
     var isSuccessful = false

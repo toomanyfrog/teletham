@@ -160,6 +160,7 @@ function makeNOGL(phone, house) {
                 if (property == "nogl") {
                     if (student.hasOwnProperty(property)) {
                         student.nogl = true;
+                        student.nogl_house = house;
                     }
                 }
             }
@@ -215,6 +216,8 @@ module.exports = {
     'addOGL': addOGL,
     'makeOGL': makeOGL,
     'revokeOGL': revokeOGL,
+    'makeNOGL': makeNOGL,
+    'revokeNOGL': revokeNOGL,
     'addStudent': addStudent,
     'removeStudent': removeStudent,
     'getStudents': getStudents
