@@ -90,8 +90,14 @@ function removeLetter(houseName, letterToRm) {
                 if (letters == "letters") {
                     if (house.hasOwnProperty(letters)) {
                         if (houseName == house_name) {
-                            house.letters.remove(letterToRm);
-                            isSuccessful = true
+                            var index = house.letters.indexOf(letterToRm);
+                            if (index > -1) {
+                               house.letters.splice(index, 1);
+                               isSuccessful = true
+                            } else {
+                                return houseName + " doesn't contain this letter."
+                            }
+                            
                         }
                     }
                 }
