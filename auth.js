@@ -16,6 +16,14 @@ function getHouse(id) {
     return false;
 }
 
+function getNOGLHouse(id) {
+    if(isAllowed(id)) {
+       return studentsInfo[id].nogl_house;
+    }
+    return false;
+}
+
+
 function isOGL(id) {
     if(isAllowed(id)) {
 	   return studentsInfo[id].ogl;

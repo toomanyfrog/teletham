@@ -104,6 +104,7 @@ function addOGL(id, firstname, matric, house) {
     return "Added!";
 }
 
+
 function makeOGL(phone) {
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
@@ -122,6 +123,7 @@ function makeOGL(phone) {
    // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "PROMOTED";
 }
+
 function revokeOGL(phone) {
     for (var phone in studentsInfo_obj) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
@@ -141,6 +143,39 @@ function revokeOGL(phone) {
     return "REVOKED";
 }
 
+function makeNOGL(phone) {
+    for (var phone in studentsInfo_obj) {
+        if(studentsInfo_obj.hasOwnProperty(phone)) {
+            var student = studentsInfo_obj[phone];
+            for(var property in student) {
+                if (property == "nogl") {
+                    if (student.hasOwnProperty(property)) {
+                        student.nogl = true;
+                    }
+                }
+            }
+        }
+    }
+   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    return "PROMOTED to NOGL";
+}
+
+function revokeNOGL(phone) {
+    for (var phone in studentsInfo_obj) {
+        if(studentsInfo_obj.hasOwnProperty(phone)) {
+            var student = studentsInfo_obj[phone];
+            for(var property in student) {
+                if (property == "nogl") {
+                    if (student.hasOwnProperty(property)) {
+                        student.nogl = false;
+                    }
+                }
+            }
+        }
+    }
+   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    return "REVOKED NOGL";
+}
 
 function isValidMatric(matric) {
     var m = matric.toUpperCase();
