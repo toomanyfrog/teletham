@@ -11,7 +11,10 @@ function isAllowed(id) {
 
 function getHouse(id) {
     if(isAllowed(id)) {
-	   return studentsInfo[id].house;
+        if (studentsInfo[id].nogl_house) {
+            return studentsInfo[id].nogl_house
+        }
+        return studentsInfo[id].house;
     }
     return false;
 }
