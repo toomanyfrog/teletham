@@ -42,7 +42,7 @@ function getFirstName(id) {
 
 function isLordAlmighty(id) {
     if(isAllowed(id)) {
-        return studentsInfo[id].lordAlmighty;
+        return studentsInfo[id].isLordAlmighty;
     }
     return false;
 }

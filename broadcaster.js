@@ -47,7 +47,7 @@ function broadcast(msg, house) {
         	broadcastObj.text = msg;
             api.sendMessage(broadcastObj, function(err, data) {
                 if (err) {
-               		console.log(chalk.read("Error Broadcasting Text Message: ") + err);
+               		console.log(chalk.red("Error Broadcasting Text Message: ") + err);
                	}
             });
 
@@ -63,7 +63,7 @@ function broadcast(msg, house) {
 	        	broadcastObj.text = msg;
 	            api.sendMessage(broadcastObj, function(err, data) {
                 	if (err) {
-                		console.log(chalk.read("Error Broadcasting Text Message: ") + err);
+                		console.log(chalk.red("Error Broadcasting Text Message: ") + err);
                 	}
                 });
 

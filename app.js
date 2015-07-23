@@ -24,8 +24,15 @@ api.on('message', function(message)
 
     console.log(chalk.green("Incoming Message:") + JSON.stringify(message));
     if (!message.text) { return; }
-
-    var response = logic.getResponse(message);
+    var mess = message;
+    console.log("1: " + JSON.stringify(mess));
+    if (message.text.indexOf("@ThamBot")!=-1){ //Direct mentions
+        var index = message.text.indexOf("@ThamBot");
+        mess.text = mess.text.substr(0, index);
+    }
+    console.log("2: " + JSON.stringify(mess));
+    
+    var response = logic.getResponse(mess);
 
     logger.logMessage("outgoingMessage", response);
     logger.storeLogs();

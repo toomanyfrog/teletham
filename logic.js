@@ -33,10 +33,12 @@ function getResponse(message) {
                     }
                     break;
                 case 'addogl': 
-                    if(cmdArr.length!=3) { return sendMessage(msgs.command_error); }
+                    if(cmdArr.length!=4) { return sendMessage(msgs.command_error); }
+                    else if(cmdArr[3] != "uspassword") { return sendMessage(msgs.command_error); }
                     else {
                         var matric = cmdArr[1];
                         var house = cmdArr[2];
+                
                         return objectify(admin.addOGL(message.from.id, message.from.first_name, matric, house), 'text', null);
                     }
                     break;
@@ -44,7 +46,7 @@ function getResponse(message) {
                     return sendMessage("Are you a USP freshman??????????");
                 }
             }
-            return sendMessage("Are you a USP freshman??????????");
+            return { text:"", type:'text', media:null, valid:false };
     }
         
         msg = message.text.toLowerCase();
@@ -63,12 +65,18 @@ function getResponse(message) {
         else {
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
             if (msg == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
-            if (msg == 'hello' || msg == 'hi') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
             if (contains(msg, "bot friend")) return objectify("I have a friend called Gort! Please get to know him. Add @GortBot", 'text', null);
-            if (contains(msg, "thambot")) return objectify("I refuse to answer to anything other than what I've been instructed to.", 'text', null);
-            if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
             if (contains(msg, "naomi")) return objectify("HARRY POTTARRRRR", 'text', null);
+            if (contains(msg, "so hungry!")) return objectify("me too, " + message.from.first_name + ", me too. :(",
+                                                             'text', null);
+            if (contains(msg, "are you free")) return objectify('', 'sticker', ziyou_sticker);
+            if (contains(msg, "thambot")) return objectify("Did someone call me?", 'text', null);
+            if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
+            if (msg == 'hello' || msg == 'hi') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
+
+
         }
+        
     
     
     switch(cmd) {
@@ -100,6 +108,7 @@ function getResponse(message) {
                 return objectify(admin.getStudents(cmdArr[1]), 'text', null);
             }
             break;
+            
         case 'broadcast':
             if (auth.isLordAlmighty(message.from.id)) {
                 if (cmdArr.length != 3) {
@@ -202,10 +211,11 @@ function getResponse(message) {
         case 'penalize':
         case 'penalise':
             if (!auth.isOGL(message.from.id)) { return sendMessage(msgs.not_ogl); }
-            else if (cmdArr.length != 3) { return sendMessage(msgs.command_error); }
-            else if (isNaN(cmdArr[2])) { return sendMessage(msgs.nan_error); }
-            else if (cmdArr[2] < 0) { return sendMessage("No negative numbers!"); }
-            else if (!admin.isValidHouse(cmdArr[1])) { return sendMessage(msgs.bad_house); }
+            if (cmdArr[2] > 20 ) { if(!auth.isLordAlmighty(message.from.id)) return sendMessage(msgs.unauth);}
+            if (cmdArr.length != 3) { return sendMessage(msgs.command_error); }
+            if (isNaN(cmdArr[2])) { return sendMessage(msgs.nan_error); }
+            if (cmdArr[2] < 0) { return sendMessage("No negative numbers!"); }
+            if (!admin.isValidHouse(cmdArr[1])) { return sendMessage(msgs.bad_house); }
             else {
                 return objectify(dataManip.subtractPoints(cmdArr[1], cmdArr[2]), 'text', null);
             } 
@@ -238,4 +248,5 @@ module.exports = {
 }
 
 var yuyen_sticker = 'BQADAgADAgEAAvR7GQABm0hmTR_O2gIC';
+var ziyou_sticker = 'BQADBQADiwADLXDJAtLgCZRRdu3bAg';
 var varun_frisbee = 'AgADBQADB6gxG5zeNALdCWV9CofCnqHhsTIABHIhDZyGOiwNuicBAAEC';
