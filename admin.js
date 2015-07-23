@@ -73,6 +73,9 @@ function removeStudent(id) {
 }
 
 function getStudents(house) {
+    if (!isValidHouse(house)) {
+        return "Invalid house entered."
+    }
     populateArrays();
     var retStr = "";
     houses[house].forEach(function (studentObj) {
