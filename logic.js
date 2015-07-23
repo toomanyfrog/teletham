@@ -155,22 +155,22 @@ function getResponse(message) {
         case 'makeogl':
             if(cmdArr.length!=2) { return sendMessage(msgs.command_error);  }
             else if (!auth.isLordAlmighty(message.from.id)) { return sendMessage(msgs.unauth); }
-            else { return objectify(admin.makeOGL(cmd[1]), 'text', null); }
+            else { return objectify(admin.makeOGL(cmdArr[1]), 'text', null); }
             break;
         case 'revokeogl':
             if(cmdArr.length!=2) { return sendMessage(msgs.command_error); }
             else if (!auth.isLordAlmighty(message.from.id)) { return sendMessage(msgs.unauth); }
-            else { return objectify(admin.revokeOGL(cmd[1]), 'text', null); }
+            else { return objectify(admin.revokeOGL(cmdArr[1]), 'text', null); }
             break;
         case 'makenogl':
-            if(cmdArr.length!=2) { return sendMessage(msgs.command_error);  }
+            if(cmdArr.length!=3) { return sendMessage(msgs.command_error);  }
             else if (!auth.isLordAlmighty(message.from.id)) { return sendMessage(msgs.unauth); }
-            else { return objectify(admin.makeNOGL(cmd[1]), 'text', null); }
+            else { return objectify(admin.makeNOGL(cmdArr[1], cmdArr[2]), 'text', null); }
             break;
         case 'revokenogl':
             if(cmdArr.length!=2) { return sendMessage(msgs.command_error); }
             else if (!auth.isLordAlmighty(message.from.id)) { return sendMessage(msgs.unauth); }
-            else { return objectify(admin.revokeNOGL(cmd[1]), 'text', null); }
+            else { return objectify(admin.revokeNOGL(cmdArr[1]), 'text', null); }
             break;
         case 'addletter':
             if (!auth.isNOGL(message.from.id)) { return sendMessage(msgs.unauth); }
