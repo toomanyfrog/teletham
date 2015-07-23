@@ -76,12 +76,13 @@ function addLetter(houseName, letterToAdd) {
     }
 
     if (!isSuccessful) {
-        return "Error Occurred. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+        return "Error occurred while adding letter. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
     }
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters.join(', ');
 }
 function removeLetter(houseName, letterToRm) {
+    var isSuccessful = false
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {
             var house = houses_obj[house_name];
@@ -90,6 +91,7 @@ function removeLetter(houseName, letterToRm) {
                     if (house.hasOwnProperty(letters)) {
                         if (houseName == house_name) {
                             house.letters.remove(letterToRm);
+                            isSuccessful = true
                         }
                     }
                 }
@@ -97,10 +99,14 @@ function removeLetter(houseName, letterToRm) {
         }
     }
 
+    if (!isSuccessful) {
+        return "Error occurred while removing letter. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
 }
 function clearLetters(houseName) {
+    var isSuccessful = false
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {
             var house = houses_obj[house_name];
@@ -109,6 +115,7 @@ function clearLetters(houseName) {
                     if (house.hasOwnProperty(letters)) {
                         if (houseName == house_name) {
                             house.letters = [];
+                            isSuccessful = true
                         }
                     }
                 }
@@ -116,6 +123,9 @@ function clearLetters(houseName) {
         }
     }
 
+    if (!isSuccessful) {
+        return "Error occurred while clearing letters. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "Cleared. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters;
 }
@@ -130,5 +140,6 @@ module.exports = {
     'subtractPoints': subtractPoints,
     'getLetters': getLetters,
     'addLetter': addLetter,
+    'removeLetter': removeLetter,
     'clearLetters': clearLetters
 };
