@@ -58,6 +58,9 @@ function getPoints(house_name) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////// LETTERS
 
 function addLetter(houseName, letterToAdd) {
+    if (typeof letterToRm === 'string') {
+        letterToAdd = letterToAdd.toUpperCase()
+    }
     var isSuccessful = false
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {
@@ -82,6 +85,9 @@ function addLetter(houseName, letterToAdd) {
     return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters.join(', ');
 }
 function removeLetter(houseName, letterToRm) {
+    if (typeof letterToRm === 'string') {
+        letterToRm = letterToRm.toUpperCase()
+    }
     var isSuccessful = false
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {
@@ -92,8 +98,8 @@ function removeLetter(houseName, letterToRm) {
                         if (houseName == house_name) {
                             var index = house.letters.indexOf(letterToRm);
                             if (index > -1) {
-                               house.letters.splice(index, 1);
-                               isSuccessful = true
+                                house.letters.splice(index, 1);
+                                isSuccessful = true
                             } else {
                                 return houseName + " doesn't contain this letter."
                             }

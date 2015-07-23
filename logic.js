@@ -178,7 +178,7 @@ function getResponse(message) {
                 if (cmdArr.length != 2) { return sendMessage(msgs.command_error); }
                 else if (cmdArr[1].length > 1) { return sendMessage("A letter has ONE CHARACTER"); }
                 else {
-                    var letterToAdd = cmdArr[1].toUpperCase()
+                    var letterToAdd = cmdArr[1]
                     return objectify(dataManip.addLetter(auth.getNOGLHouse(message.from.id), letterToAdd), 'text', null); 
                 }
             }
