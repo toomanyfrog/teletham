@@ -58,6 +58,7 @@ function isLordAlmighty(id) {
 module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
+    getNOGLHouse: getNOGLHouse,
     isOGL: isOGL,
     isNOGL: isNOGL,
     getFirstName: getFirstName,

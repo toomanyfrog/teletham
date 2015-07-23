@@ -58,6 +58,7 @@ function getPoints(house_name) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////// LETTERS
 
 function addLetter(houseName, letterToAdd) {
+    var isSuccessful = false
     for (var house_name in houses_obj) {
         if(houses_obj.hasOwnProperty(house_name)) {
             var house = houses_obj[house_name];
@@ -66,6 +67,7 @@ function addLetter(houseName, letterToAdd) {
                     if (house.hasOwnProperty(letters)) {
                         if (houseName == house_name) {
                             house.letters.push(letterToAdd);
+                            isSuccessful = true
                         }
                     }
                 }
@@ -73,6 +75,9 @@ function addLetter(houseName, letterToAdd) {
         }
     }
 
+    if (!isSuccessful) {
+        return "Error Occurred. Contact @yeojoey, @ZacharyFernandez or @varunpatro."
+    }
     fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "Added. Current letters for " + houses_obj[houseName].name + ": " + houses_obj[houseName].letters.join(', ');
 }
