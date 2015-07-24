@@ -58,10 +58,24 @@ function isLordAlmighty(id) {
     return false;
 }
 
+function getNOGL(id) {
+    var house = studentsInfo[id].house;
+    var nogl = "Tham"
+    for (student in studentsInfo) {
+        if (studentsInfo[student].nogl === true && studentsInfo[student].nogl_house === house) {
+            nogl = studentsInfo[student].firstname
+            return nogl
+        }
+    }
+    return nogl
+
+}
+
 module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
     getNOGLHouse: getNOGLHouse,
+    getNOGL: getNOGL,
     isOGL: isOGL,
     isNOGL: isNOGL,
     getFirstName: getFirstName,

@@ -64,17 +64,41 @@ function getResponse(message) {
             }
         }
         else {
+            function randHouse() {
+                var randHouseArr = ['Aviur', 'Amaranth', 'Arete', 'Levian', 'Varjo', 'Nidhogg'];
+                var index = Math.floor(Math.random(0, 100) * 10) % 6;
+                return randHouseArr[index];
+            }
+            function noglName() {
+                return auth.getNOGL(message.from.id)
+            }
+            var hi_messages = [
+                "Hello, " +  message.from.first_name + "!",
+                "I'll feast on your blood, " + message.from.first_name + ".",
+                "My master Tham will accept your sacrifice - shortly.",
+                "My favourite house is " + randHouse() + '.',
+                message.from.first_name + ", how dare you address me directly.",
+                "If you buy " + noglName() + " an ice cream, I may consider giving you extra points."
+            ]
+            function randHi() {
+                var index = Math.floor(Math.random(0, 100) * 10) % 6;
+                return hi_messages[index];
+            }
+
+            if (contains(msg, "thambot")) return objectify("Did someone call me?", 'text', null);
+            if (msg == 'hello' || msg == 'hi') return objectify(randHi(), 'text', null);
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
             if (msg == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
             if (contains(msg, "bot friend")) return objectify("I have a friend called Gort! Please get to know him. Add @GortBot", 'text', null);
             if (contains(msg, "naomi")) return objectify("HARRY POTTARRRRR", 'text', null);
+            if (contains(msg, "joey")) return objectify("Excuse you! Joey is awesome.", 'text', null);
+            if (contains(msg, "gladys")) return objectify("How about no.", 'text', null);
+            if (contains(msg, "bro")) return objectify("I'm not your bro, Bro.", 'text', null);
+            if (contains(msg, "zac")) return objectify("What a ZILF ;)", 'text', null);
             if (contains(msg, "so hungry!")) return objectify("me too, " + message.from.first_name + ", me too. :(",
                                                              'text', null);
             if (contains(msg, "are you free")) return objectify('', 'sticker', ziyou_sticker);
-            if (contains(msg, "thambot")) return objectify("Did someone call me?", 'text', null);
             if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
-            if (msg == 'hello' || msg == 'hi') return objectify("Hello, " +  message.from.first_name + "!", 'text', null);
-
 
         }
         
