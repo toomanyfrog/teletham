@@ -159,7 +159,7 @@ function revokeOGL(phone) {
     return "REVOKED";
 }
 
-function makeNOGL(phone, house) {
+function makeNOGL(id, house) {
     var isSuccessful = false;
     if (!house) {
         return "Enter a house after phoneID."
@@ -171,7 +171,7 @@ function makeNOGL(phone, house) {
         if(studentsInfo_obj.hasOwnProperty(phone)) {
             var student = studentsInfo_obj[phone];
             for(var property in student) {
-                if (property == "nogl") {
+                if (property === "nogl" && phone === id) {
                     if (student.hasOwnProperty(property)) {
                         student.nogl = true;
                         student.nogl_house = house;
