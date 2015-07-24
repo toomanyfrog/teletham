@@ -48,7 +48,7 @@ function getResponse(message) {
                 }
             }
             return { text:"", type:'text', media:null, valid:false };
-    }
+        }
         
         msg = message.text.toLowerCase();
 
@@ -86,7 +86,12 @@ function getResponse(message) {
             }
 
             if (contains(msg, "thambot")) return objectify("Did someone call me?", 'text', null);
-            if (msg == 'hello' || msg == 'hi') return objectify(randHi(), 'text', null);
+            if (msg == 'hello' || msg == 'hi') {
+                if (message.from.id == '102675141') {
+                    return objectify("You're cheating on Gort with me, Nic? ;)", 'text', null);
+                }
+                return objectify(randHi(), 'text', null);
+            }
             if (msg == 'yuyen') return objectify('', 'sticker', yuyen_sticker);
             if (msg == 'frisbee') return objectify('Did someone say FRISBEE?', 'image', varun_frisbee);
             if (contains(msg, "bot friend")) return objectify("I have a friend called Gort! Please get to know him. Add @GortBot", 'text', null);
@@ -99,13 +104,15 @@ function getResponse(message) {
                                                              'text', null);
             if (contains(msg, "are you free")) return objectify('', 'sticker', ziyou_sticker);
             if (contains(msg, "tham ")) return objectify("Welcome.", 'text', null);
-
+            if (contains(msg, "i love you")) return objectify("So does yo mom 😏", 'text', null);
         }
         
     
     
     switch(cmd) {
         //////////////////////////////////////////////MESSAGES
+        case 'wrist':
+            return sendMessage("Please don't 😢. Your life is precious.")
         case 'help':
             return sendMessage(msgs.help);
         case 'ogl_help': 
