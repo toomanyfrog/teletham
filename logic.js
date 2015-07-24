@@ -91,6 +91,13 @@ function getResponse(message) {
                 return sendMessage(msgs.ogl_help);
             }
             break;
+        case 'nogl_help': 
+            if (!auth.isNOGL(message.from.id)) {
+                return sendMessage(msgs.not_nogl);
+            } else {
+                return sendMessage(msgs.nogl_help);
+            }
+            break;
         case 'remove_student': 
             if (!auth.isOGL(message.from.id)) {
                 return sendMessage(msgs.not_ogl);
