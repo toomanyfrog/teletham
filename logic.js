@@ -87,7 +87,7 @@ function getResponse(message) {
 
             if (contains(msg, "thambot")) return objectify("Did someone call me?", 'text', null);
             if (msg == 'hello' || msg == 'hi') {
-                if (message.from.id == '102675141') {
+                if (message.from.id == '89733245') {
                     return objectify("You're cheating on Gort with me, Nic? ;)", 'text', null);
                 }
                 return objectify(randHi(), 'text', null);
